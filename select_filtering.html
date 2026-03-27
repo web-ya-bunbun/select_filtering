@@ -1,11 +1,265 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/filtering.js" defer></script>
   <title>selectメニューで項目をフィルタリング</title>
 </head>
+
 <body>
-  
+  <label for="">
+    <select name="filtering" id="filtering">
+      <option value="">全部見たい！</option>
+        <optgroup label="性別">
+          <option value="">オス</option>
+          <option value="">メス</option>
+        </optgroup>
+        <optgroup label="大人・子ども">
+          <option value="">子猫（1歳未満）</option>
+          <option value="">大人猫（1歳以上）</option>
+        </optgroup>
+        <optgroup label="毛色">
+          <option value="">白</option>
+          <option value="">黒</option>
+          <option value="">グレー</option>
+          <option value="">白黒</option>
+          <option value="">キジトラ</option>
+          <option value="">サバトラ</option>
+          <option value="">茶トラ</option>
+          <option value="">白キジ</option>
+          <option value="">白サバ</option>
+          <option value="">白茶</option>
+          <option value="">三毛</option>
+          <option value="">サビ</option>
+          <option value="">その他</option>
+        </optgroup>
+      </select>
+  </label>
+  <ul class="list">
+    <li class="item">
+      <div class="img"><img src="img/cat_01.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">いつも陽気で、食いしん坊な看板猫</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">チャイ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">3歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">茶トラ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_02.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">クールに見えて、食いしん坊な一面も</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">グレアム</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">4歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">グレー</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_03.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">好奇心旺盛！おもちゃは絶対離さない</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">クローネ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">3ヶ月</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">黒</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_04.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">大あくび！マイペースなムードメーカー</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ロッキー</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">3歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">白キジ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_05.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">日向ぼっこが日課の、のんびり屋さん</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ビアンカ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">1歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">白</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_06.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">凛とした表情、甘える時は全力です</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">のりお</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">3歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">白キジ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_07.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">狙いを定めて…遊び盛りな甘えん坊</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">チャッティ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">4ヶ月</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">茶トラ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_08.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">貴婦人のような、落ち着いた性格</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">グレース</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">1歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">グレー</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_09.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">丸くなって眠る、安心しきった寝顔</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ラッキー</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">5歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">キジトラ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_10.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">夢の中で遊んでる、お昼寝大好きっ子</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ミシェル</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">5ヶ月</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">三毛</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_11.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">毛づくろい中。身だしなみは大切に</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">タマ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">3歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">白茶</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_12.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">熟睡中。どんな夢を見ているのかな？</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">マティ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">1歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">黒</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_13.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">兄弟で一番のしっかり者、カメラ目線</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">イザベラ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">3ヶ月</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">キジトラ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_14.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">お気に入りのおもちゃと、いつも一緒</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ゴンタ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">2歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">白茶</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_15.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">おすまし顔の、おっとりした王子様</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ブラッキー</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">3歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">黒</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_16.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">個性的な柄、撫でられるのが大好き</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">アイリン</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">3歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">サビ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_17.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">まんまるお目目の、ちょっと慎重派</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ミック</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">2ヶ月</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">キジトラ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_18.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">安定のキジトラ、お昼寝場所の番人</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ベリンダ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">5歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">キジトラ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_19.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">じっと見つめる、おっとりした性格</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ハチ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">2歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">白黒</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_20.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">優雅に佇む、カフェの頼れるお姉さん</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">マロン</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">1歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">ミケ</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_21.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">鋭い眼差し、実はとっても寂しがり屋</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ボブ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">オス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">2歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">白黒</span></dd>
+      </dl>
+    </li>
+    <li class="item">
+      <div class="img"><img src="img/cat_22.png" alt=""></div>
+      <dl class="detail">
+        <dt class="detailTitle">神秘的なオーラを纏う、マイペースさん</dt>
+        <dd class="detailItem detailName"><span class="detailLabel">仮名</span><span class="detailValue">ライナ</span></dd>
+        <dd class="detailItem detailSex"><span class="detailLabel">性別</span><span class="detailValue">メス</span></dd>
+        <dd class="detailItem detailAge"><span class="detailLabel">推定年齢</span><span class="detailValue">3歳</span></dd>
+        <dd class="detailItem detailColor"><span class="detailLabel">毛色</span><span class="detailValue">白</span></dd>
+      </dl>
+    </li>
+  </ul>
 </body>
+
 </html>
