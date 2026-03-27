@@ -16,7 +16,8 @@ html {
 
 /* Remove default margin in favour of better control in authored CSS */
 body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
+figure, blockquote, dl, dd,
+ul, ol, li {
   margin: 0;
   padding: 0;
 }
@@ -82,7 +83,19 @@ body {
 
 /* main contents */
 .main {
-  padding: 3rem 1rem;
+  padding-block: 3rem;
+}
+
+.filteringWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background-color: #f89900;
+  > p {
+    color: #fff;
+  }
 }
 
 .selectFiltering {
@@ -93,9 +106,9 @@ body {
 
 .selectFiltering::after {
     position: absolute;
-    right: 15px;
-    width: 10px;
-    height: 7px;
+    right: 1rem;
+    width: 0.63rem;
+    height: 0.44rem;
     background-color: #535353;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
     content: '';
@@ -105,12 +118,67 @@ body {
 .selectFiltering select {
     appearance: none;
     min-width: 230px;
-    height: 2.8em;
-    padding: .4em calc(.8em + 30px) .4em .8em;
-    border: 1px solid #d0d0d0;
-    border-radius: 25px;
+    height: 2.8rem;
+    padding: .4rem 2.8rem .4rem 1.2rem;
+    border: none;
+    border-radius: 1.4rem;
     background-color: #fff;
     color: #333333;
-    font-size: 1em;
+    font-size: 0.9rem;
     cursor: pointer;
+    &:focus {
+      outline: 1px solid #ccc;
+    }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 17rem));
+  justify-content: center;
+  gap: 1rem;
+  padding-inline: 1rem;
+  a {
+    display: block;
+    padding: 0.8rem;
+    text-decoration: none;
+  }
+}
+.item {
+  width: 17rem;
+  border: 1px solid #eee;
+  transition: all .3s;
+}
+.itemImg {
+  > img {
+    aspect-ratio: 4 / 3;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+}
+.detail {
+  margin-top: 0.5rem;
+}
+.detailTitle {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+.detailItem {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.detailLabel {
+  width: 4rem;
+  padding: 0.3rem;
+  border-radius: 2px;
+  background-color: #95803a;
+  font-size: 0.8rem;
+  color: #fff;
+  line-height: 1.1;
+  text-align: justify;
+  text-align-last: justify;
+}
+.detailValue {
+  font-size: 0.9rem;
 }
