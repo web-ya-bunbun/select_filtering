@@ -1,5 +1,8 @@
+const item = document.querySelectorAll('.item');
+const toggle = document.getElementById('toggle');
+
+//class付与関数
 const addClass = () => {
-  const item = document.querySelectorAll('.item');
   const sexObj = [
     {
       id: 1,
@@ -107,4 +110,44 @@ const addClass = () => {
   });
 };
 
+//class付与関数を実行
 addClass();
+
+let currentFilterClass = '';
+
+const updateDisplay = () => {
+  item.forEach((elm) => {
+    elm.style.display = 'none';
+  });
+
+  if (!currentFilterClass) {
+    currentFilterClass = 'item';
+  }
+
+  const displayItem = document.querySelectorAll('.' + currentFilterClass);
+
+  if (toggle.checked) {
+    displayItem.forEach((elm) => {
+      if (!elm.classList.contains('is-decided')) {
+        elm.style.display = 'block';
+      }
+    });
+  } else {
+    displayItem.forEach((elm) => {
+      elm.style.display = 'block';
+    });
+  }
+};
+
+const filterBySelect = (className) => {
+  currentFilterClass = className;
+  updateDisplay();
+};
+
+const select = document.getElementById('filtering');
+select.addEventListener('change', () => {
+  const selectlVal = select.value;
+  filterBySelect(selectlVal);
+});
+
+toggle.addEventListener('change', updateDisplay);

@@ -1,4 +1,3 @@
-
 /* Box sizing rules */
 *,
 *::before,
@@ -15,9 +14,19 @@ html {
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd,
-ul, ol, li {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+li {
   margin: 0;
   padding: 0;
 }
@@ -36,14 +45,21 @@ body {
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
   line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
@@ -61,8 +77,10 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
+input,
+button,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
 }
@@ -78,7 +96,7 @@ textarea:not([rows]) {
 }
 
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 /* main contents */
@@ -89,46 +107,101 @@ body {
 .filteringWrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
   margin-bottom: 2rem;
   background-color: #f89900;
+}
+
+.selectFilteringWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   > p {
     color: #fff;
   }
 }
 
 .selectFiltering {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
 }
 
 .selectFiltering::after {
-    position: absolute;
-    right: 1rem;
-    width: 0.63rem;
-    height: 0.44rem;
-    background-color: #535353;
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
-    content: '';
-    pointer-events: none;
+  position: absolute;
+  right: 1rem;
+  width: 0.63rem;
+  height: 0.44rem;
+  background-color: #535353;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  content: '';
+  pointer-events: none;
 }
 
 .selectFiltering select {
-    appearance: none;
-    min-width: 230px;
-    height: 2.8rem;
-    padding: .4rem 2.8rem .4rem 1.2rem;
-    border: none;
-    border-radius: 1.4rem;
-    background-color: #fff;
-    color: #333333;
-    font-size: 0.9rem;
-    cursor: pointer;
-    &:focus {
-      outline: 1px solid #ccc;
-    }
+  appearance: none;
+  min-width: 230px;
+  height: 2.8rem;
+  padding: 0.4rem 2.8rem 0.4rem 1.2rem;
+  border: none;
+  border-radius: 1.4rem;
+  background-color: #fff;
+  color: #333333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  &:focus {
+    outline: 1px solid #ccc;
+  }
+}
+
+.toggle {
+  position: relative;
+  padding-top: 0.2rem;
+  padding-left: 3.5rem;
+  font-size: 0.8rem;
+  color: #fff;
+}
+.toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  background-color: #dddddd;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.toggle:has(:checked)::before {
+  background-color: #64da4c;
+}
+
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+  background: #fff;
+  transition: left 0.4s;
+}
+
+.toggle:has(:checked)::after {
+  left: 1.5rem;
+}
+
+.toggle input {
+  display: none;
 }
 
 .list {
@@ -146,7 +219,7 @@ body {
 .item {
   width: 17rem;
   border: 1px solid #eee;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .itemImg {
   > img {
