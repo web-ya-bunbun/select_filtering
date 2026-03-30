@@ -18,13 +18,13 @@ const addClass = () => {
   const ageObj = [
     {
       id: 1,
-      type: '大人',
-      class: 'is-adult',
+      type: '子供',
+      class: 'is-kitten',
     },
     {
       id: 2,
-      type: '子供',
-      class: 'is-kitten',
+      type: '大人',
+      class: 'is-adult',
     },
   ];
   const colorObj = [
@@ -106,7 +106,7 @@ const addClass = () => {
     const sex = sexObj.find((obj) => obj.type === sexTxt);
     const age = ageObj.find((obj) => obj.type === repAgeTxt);
     const color = colorObj.find((obj) => obj.type === colorTxt);
-    elm.classList.add(sex.class, age.class, color.class);
+    elm.classList.add(sex.class, age.class, color.class, 'is-show');
   });
 };
 
@@ -117,7 +117,7 @@ let currentFilterClass = '';
 
 const updateDisplay = () => {
   item.forEach((elm) => {
-    elm.style.display = 'none';
+    elm.classList.remove('is-show');
   });
 
   if (!currentFilterClass) {
@@ -129,12 +129,12 @@ const updateDisplay = () => {
   if (toggle.checked) {
     displayItem.forEach((elm) => {
       if (!elm.classList.contains('is-decided')) {
-        elm.style.display = 'block';
+        elm.classList.add('is-show');
       }
     });
   } else {
     displayItem.forEach((elm) => {
-      elm.style.display = 'block';
+      elm.classList.add('is-show');
     });
   }
 };

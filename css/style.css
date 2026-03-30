@@ -218,8 +218,18 @@ body {
 }
 .item {
   width: 17rem;
+  display: none;
+  opacity: 1;
   border: 1px solid #eee;
   transition: all 0.3s;
+  /* transition-behavior: allow-discrete; */
+  &.is-show {
+    display: block;
+    opacity: 1;
+    @starting-style {
+      opacity: 0;
+    }
+  }
 }
 .itemImg {
   > img {
